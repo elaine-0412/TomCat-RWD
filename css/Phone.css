@@ -1,0 +1,144 @@
+* {
+box-sizing: border-box;
+}
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+a { 
+    text-decoration: none;
+    color: rgb(255, 128, 0);
+}
+.nav {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 187, 0);
+    padding: 10px 20px;
+    position: relative;
+}
+.logo {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border: 2px solid rgb(255, 128, 0);
+    border-radius: 50%;
+    background-image: url(../img/cat.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 0px 30px black;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.logo:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.nav-btn-all {
+    background-color: #ffedc6;
+    width: 150px;
+    border-radius: 10px;
+    float: right;
+    display: none;
+    position: absolute;
+    top: 90px;
+
+}
+.nav-btn {
+    background-color: #ffedc6;
+    width: 130px;
+    height: 50px;
+    border: 2px solid rgb(255, 128, 0);
+    border-radius:10px 50px 50px 10px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    margin: 20px 10px
+}
+.nav-btn:hover {
+    transform: scale(1.1) translate(20px);
+    background-color: rgb(255, 128, 0);
+    color: white;
+    box-shadow: 5px 5px red;
+}
+.container {
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: rgb(255, 236, 221);
+}
+.content {
+    width: 100%;
+    height: 100%;
+}
+.img {
+    width: 100%;
+    height: calc(100% / 3);
+    background-color: gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    float: left;
+}
+.img:hover {
+    transform: scale(0.9) rotate(-1deg);
+    border-radius: 10px;
+    opacity: 25%;
+    box-shadow:10px 10px red;
+}
+
+.img-1 {
+    background-image: url(../img/cat-12.jpeg);
+}
+.img-2 {
+    background-image: url(../img/cat-13.jpeg);
+}
+.img-3 {
+    background-image: url(../img/cat-15.jpeg);
+}
+/* 漢堡按鈕 */
+.ham-btn {
+    background-color: yellow;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: block;
+    position: relative;
+    top: 10px;
+}
+.ham-btn .line {
+    background-color: rgb(255, 187, 0);
+    width: 60%;
+    height: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
+.ham-btn .line-1 {
+    top: 25%;
+}
+.ham-btn .line-2 {
+    top: 50%;
+}
+.ham-btn .line-3 {
+    top: 75%;
+}
+#ham-switch:checked+.ham-btn .line-1{
+    top: 50%;
+    transform:  translate(-50%, -50%) rotate(45deg);
+}
+#ham-switch:checked+.ham-btn .line-3{
+    top: 50%;
+    transform:  translate(-50%, -50%) rotate(-45deg);
+}
+#ham-switch:checked+.ham-btn .line-2{
+    display: none;
+}
+#ham-switch:checked~.nav-btn-all{
+    display: block;
+}
